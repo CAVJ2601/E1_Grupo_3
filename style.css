@@ -2,16 +2,120 @@
     justify-content: center;
 }
 
-footer{
-    text-align: center;
-    background: grey;
-    padding: 40px;
-    max-width: 100px;
-    max-height: 100px;
+body { 
+    font-family: 'Monserrat', sans-serif;   
 }
 
-img{
+header{
+    background-image: url(resources/bg_2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 250px;
+}
+
+header h1{
+    font-size: 100px;
+    font-weight: bold;
+    color:antiquewhite;
+    text-shadow: 10px 10px #404a6d;
+}
+
+main{
+    background-color: #0d1324;
+    padding: 50px;
+    margin: 0 auto;
+}
+
+.categorias-principal{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.categorias{
+    text-align: center;
+    width: 10%;
+    margin: 0 1%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    border: 2px solid #81889c;
+    border-radius: 15px;
+    }
+
+.categorias:hover{
+    border-color: #C78C19;
+    font-size: larger;
+}
+
+.listado-producto{
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px;
+    color:#81889c;
+}
+
+.listado-producto li{
+    display:inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    border: 2px solid antiquewhite;
+    border-radius: 10px;
+}
+
+.listado-producto img{
+    width: 100px;
+    height: 130px;
+    align-items: center;
+    padding: 20px;   
+}
+
+
+.descripcion-producto{
+    font-size: 10px;
+}
+
+.precio-producto{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.listado-producto li:hover{
+    border-color: aquamarine;
+    font-size: larger;
+}
+
+footer{
+    background-color: #404a6d;
+    padding: 50px;
+}
+
+.footer-block{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+}
+
+.texto-footer{
+    color: antiquewhite;
+    font-size: 14px;
+    margin: 10px;
+    text-align: center;
+}
+
+.image-on-top{
+    padding: 10px;
+}
+
+.image-on-top img{
     width: 50px;
     height: 50px;
     align-items: center;
+    padding: 20px;
 }
