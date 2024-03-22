@@ -14,7 +14,51 @@ header{
     padding: 250px;
 }
 
+
+#inicio {
+    position: absolute;
+    display: flex;
+    justify-content: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    padding: 20px;
+    color: black;
+    font-weight: bold;    
+}
+
+#inicio:hover {
+    color: aliceblue;
+}
+
+#inicio_sesion {
+    text-decoration: none;
+    margin-top: 20px;
+    font-family: 'Monserrat', sans-serif;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    color: beige;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: aliceblue;
+    border-width: 1px;
+    width: 120px;
+    padding: 5px;              
+}
+
+#inicio_sesion:hover {
+    color: rgb(165, 191, 214);
+    border-color: rgb(165, 191 ,214);
+}
+
 header h1{
+    font-size: 100px;
+    font-weight: bold;
+    color:antiquewhite;
+    text-shadow: 10px 10px #404a6d;
+}
+
+header h2{
     font-size: 100px;
     font-weight: bold;
     color:antiquewhite;
@@ -27,6 +71,20 @@ main{
     margin: 0 auto;
 }
 
+#titulo_cat {
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+#titulo_cat:hover {
+    color: lightslategray;
+}
+
+#des_cat{
+    color: aliceblue;
+}
+
 .categorias-principal{
     width: 100%;
     display: flex;
@@ -34,13 +92,15 @@ main{
 }
 
 .categorias{
+    text-decoration: none;
     text-align: center;
     width: 10%;
     margin: 0 1%;
-    padding: 30px 20px;
+    padding: 30px 10px;
     box-sizing: border-box;
     border: 2px solid #81889c;
     border-radius: 15px;
+    font-weight: bold;
     }
 
 .categorias:hover{
@@ -118,4 +178,17 @@ footer{
     height: 50px;
     align-items: center;
     padding: 20px;
+}
+
+.formulario{
+    text-decoration: none;
+    text-align: center;
+    margin: 0 1%;
+    padding: 30px 10px;
+    font-weight: bold;
+    color: antiquewhite;
+}
+
+#campo_formulario {
+    padding: 10px;
 }
