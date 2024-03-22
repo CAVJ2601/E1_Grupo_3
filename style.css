@@ -1,17 +1,14 @@
-.container-categorias{
-    justify-content: center;
-}
-
 body { 
-    font-family: 'Monserrat', sans-serif;   
+    font-family: 'Monserrat', sans-serif;
+    background-image: url(resources/bg_2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;   
+
 }
 
 header{
-    background-image: url(resources/bg_2.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    padding: 250px;
+    padding: 150px;
 }
 
 
@@ -67,8 +64,13 @@ header h2{
 
 main{
     background-color: #0d1324;
+    opacity: 0.6;
     padding: 50px;
     margin: 0 auto;
+}
+
+.container-categorias{
+    justify-content: center;
 }
 
 #titulo_cat {
@@ -94,6 +96,7 @@ main{
 .categorias{
     text-decoration: none;
     text-align: center;
+    color: antiquewhite;
     width: 10%;
     margin: 0 1%;
     padding: 30px 10px;
@@ -151,7 +154,9 @@ main{
 }
 
 footer{
-    background-color: #404a6d;
+    position: relative;
+    width: 100%;
+    height: 100%;
     padding: 50px;
 }
 
