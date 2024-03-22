@@ -195,4 +195,6 @@ footer{
 
 #campo_formulario {
     padding: 10px;
+    margin: auto;
+    border-radius: 5px;
 }
