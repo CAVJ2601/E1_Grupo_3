@@ -181,12 +181,16 @@ footer{
 }
 
 .formulario{
+    max-width: 500px;
     text-decoration: none;
     text-align: center;
-    margin: 0 1%;
-    padding: 30px 10px;
-    font-weight: bold;
+    margin: 0 auto;
+    padding: 3px 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: antiquewhite;
+    border: 1px solid #81889c;
+    border-radius: 5px;
+    background-color: #0d1324;
 }
 
 #campo_formulario {
