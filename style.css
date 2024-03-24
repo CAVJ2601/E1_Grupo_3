@@ -3,14 +3,12 @@ body {
     background-image: url(resources/bg_2.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;   
-
+    background-attachment: fixed; 
 }
 
 header {
     padding: 150px;
 }
-
 
 #inicio {
     position: absolute;
@@ -19,12 +17,12 @@ header {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
     padding: 20px;
-    color: black;
+    color: whitesmoke;
     font-weight: bold;    
 }
 
 #inicio:hover {
-    color: aliceblue;
+    color: rgb(165, 191, 214);
 }
 
 #inicio_sesion {
