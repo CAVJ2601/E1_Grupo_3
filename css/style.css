@@ -1,6 +1,6 @@
 body { 
     font-family: 'Monserrat', sans-serif;
-    background-image: url(resources/bg_2.png);
+    background-image: url(/resources/bg_2.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed; 
