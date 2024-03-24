@@ -7,7 +7,7 @@ body {
 
 }
 
-header{
+header {
     padding: 150px;
 }
 
@@ -48,52 +48,49 @@ header{
     border-color: rgb(165, 191 ,214);
 }
 
-header h1{
+header h1 {
     font-size: 100px;
     font-weight: bold;
     color:antiquewhite;
     text-shadow: 10px 10px #404a6d;
 }
 
-header h2{
+header h2 {
     font-size: 100px;
     font-weight: bold;
     color:antiquewhite;
     text-shadow: 10px 10px #404a6d;
 }
 
-main{
+main {
     background-color: #0d1324;
     opacity: 0.6;
     padding: 50px;
     margin: 0 auto;
 }
 
-.container-categorias{
+.container-categorias {
     justify-content: center;
 }
 
 #titulo_cat {
+    color: aliceblue;
     font-weight: bold;
     text-decoration: none;
     font-size: 30px;
 }
 
-#titulo_cat:hover {
-    color: lightslategray;
-}
-
-#des_cat{
+#des_cat {
     color: aliceblue;
 }
 
-.categorias-principal{
+.categorias-principal {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.categorias{
+.categorias {
     text-decoration: none;
     text-align: center;
     color: antiquewhite;
@@ -104,21 +101,21 @@ main{
     border: 2px solid #81889c;
     border-radius: 15px;
     font-weight: bold;
-    }
+}
 
-.categorias:hover{
+.categorias:hover {
     border-color: #C78C19;
     font-size: larger;
 }
 
-.listado-producto{
+.listado-producto {
     width: 940px;
     margin: 0 auto;
     padding: 50px;
     color:#81889c;
 }
 
-.listado-producto li{
+.listado-producto li {
     display:inline-block;
     text-align: center;
     width: 30%;
@@ -130,7 +127,7 @@ main{
     border-radius: 10px;
 }
 
-.listado-producto img{
+.listado-producto img {
     width: 100px;
     height: 130px;
     align-items: center;
@@ -138,54 +135,54 @@ main{
 }
 
 
-.descripcion-producto{
+.descripcion-producto {
     font-size: 10px;
 }
 
-.precio-producto{
+.precio-producto {
     font-size: 20px;
     font-weight: bold;
     margin-top: 10px;
 }
 
-.listado-producto li:hover{
+.listado-producto li:hover {
     border-color: aquamarine;
     font-size: larger;
 }
 
-footer{
+footer {
     position: relative;
     width: 100%;
     height: 100%;
     padding: 50px;
 }
 
-.footer-block{
+.footer-block {
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding: 10px;
 }
 
-.texto-footer{
+.texto-footer {
     color: antiquewhite;
     font-size: 14px;
     margin: 10px;
     text-align: center;
 }
 
-.image-on-top{
+.image-on-top {
     padding: 10px;
 }
 
-.image-on-top img{
+.image-on-top img {
     width: 70px;
     height: 70px;
     align-items: center;
     padding: 20px;
 }
 
-.formulario{
+.formulario {
     max-width: 500px;
     text-decoration: none;
     text-align: center;
