@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        {% load static%}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HORA RATA</title>
+        <link rel="stylesheet" href="{% static 'core/css/reset.css' %}">
+        <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    </head>
+
+    <body>
+
+        <div>
+            <a id="inicio" href="/">>>>Inicio</a>
+            <nav>
+                <a id='inicio_sesion' href="inicioSesion">Iniciar sesión</a>
+            </nav>
+        </div>
+
+        <header>
+            <h1>MMORPG</h1>
+        </header>
+        {% load static%}
+        <main>
+            <ul class="listado-producto">
+                <li>
+                    <h2>Final Fantasy XIV</h2>
+                    <img src="{% static 'core/img/mmorpg_ffxiv.png' %}" alt="Final Fantasy XIV">
+                    <p class="descripcion-producto">Únete a la fantasía de Eorzea en el críticamente aclamado MMORPG, con una prueba gratis hasta el nivel 70 sin restricciones en el tiempo de juego</p>
+                    <p class="precio-producto">$29.990</p>
+                </li>
+                <li>
+                    <h2>World of Warcraft</h2>
+                    <img src="{% static 'core/img/mmorpg_wow.png' %}" alt="WoW">
+                    <p class="descripcion-producto">Reúne a tus amigos y aliados para descender bajo la superficie de Azeroth y enfrentarte al mal que acecha en la oscuridad</p>
+                    <p class="precio-producto">$29.990</p>
+                </li>
+            </ul>
+        </main>
+
+        <footer>
+            <p class="texto-footer">Juegos Rata es una tienda exclusivamente online. Encuentranos en nuestras redes sociales:</p>
+            {% load static%}
+            <div class="footer-block">
+                <div class="image-on-top">
+                    <img src="{% static 'core/img/icono_insta.png' %}" alt="Instagram">
+                    <img src="{% static 'core/img/icono_tiktok.png' %}" alt="Tik Tok">
+                    <img src="{% static 'core/img/icono_x.png' %}" alt="Twitter">
+                </div>
+            </div>
+        </footer>
+    </body>
+
+</html>
