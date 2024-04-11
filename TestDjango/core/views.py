@@ -25,7 +25,8 @@ def rpg(request):
     return render(request, "core/rpg.html")
 
 #from django.shortcuts import render
-from .forms import UsuarioForm
+from .forms import UsuarioForm, LoginForm
+from .models import Usuario
 from django.shortcuts import render, redirect
 
 
@@ -46,3 +47,34 @@ def form_crea_usuario(request):
             datos['mensaje'] = "Error " + formulario.errors.as_text()
         
     return render(request, 'core/form_crea_usuario.html', datos)
+
+def form_login(request):
+    datos = {
+        'form': LoginForm()
+    }
+    print("Entrando a vista login")
+    if request.method == 'POST':
+        formulario = LoginForm(request.POST, request.FILES)
+        data = request.POST
+        usuario_form = data.get('usuario')
+        clave_form = data.get('password')
+
+        print("usuario_form " + usuario_form)
+        print("clave_form " + clave_form)
+        user = Usuario.objects.get(usuario=usuario_form)
+
+        clave = user.password
+        print("clave " + clave)
+
+
+
+        print("Formulario correcto")
+        if clave == clave_form:
+            print("clave correcta " + clave)
+            datos['mensaje'] = "Clave correcta"
+        else:
+            print("clave incorrecta" + clave)
+            datos['mensaje'] = "Clave incorrecta"
+
+        
+    return render(request, 'core/form_login.html', datos)
