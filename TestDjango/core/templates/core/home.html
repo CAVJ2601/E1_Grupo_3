@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+   
+    <head>
+        {% load static%}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HORA RATA</title>
+        <link rel="stylesheet" href="{% static 'core/css/reset.css' %}">
+        <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    </head>
+
+    <body>
+        <div>
+            <a id="inicio" href="/">>>>Inicio</a>
+            <nav>
+                <a id='inicio_sesion' href="form_crea_usuario">Registro usuario</a>
+            </nav>
+        </div>
+        
+        <header>
+            <h1>
+                VIDEOJUEGOS A TU ALCANCE
+            </h1>
+        </header>
+
+        <main>
+            <div>
+                <p id="titulo_cat">CATEGORIAS</p>
+            </div>
+
+            <br>
+
+            <div>
+                <p id="des_cat">Encuentra nuestra gran variedad de juegos, contando con distintos títulos de los más clásicos a los últimos lanzamientos.</p>
+            </div>
+
+            <br><br>
+
+            <div class="categorias-principal">
+                <a class="categorias" href="freeToPlay">Free To Play</a>
+                <a class="categorias" href="mmorpg">MMORPG</a>
+                <a class="categorias" href="rpg">RPG</a>
+                <a class="categorias" href="accion">Acción</a>
+                <a class="categorias" href="deportes">Deportes</a>
+            </div>
+        </main>
+
+        <footer>
+            <p class="texto-footer">Juegos Rata es una tienda exclusivamente online. Encuentranos en nuestras redes sociales:</p>
+            {% load static%}
+            <div class="footer-block">
+                <div class="image-on-top">
+                    <img src="{% static 'core/img/icono_insta.png' %}" alt="Instagram">
+                    <img src="{% static 'core/img/icono_tiktok.png' %}" alt="Tik Tok">
+                    <img src="{% static 'core/img/icono_x.png' %}" alt="Twitter">
+                </div>
+            </div>
+        </footer>
+    </body>
+
+</html>

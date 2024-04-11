@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        {% load static%}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HORA RATA</title>
+        <link rel="stylesheet" href="{% static 'core/css/reset.css' %}">
+        <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    </head>
+
+    <body>
+
+        <div>
+            <a id="inicio" href="/">>>>Inicio</a>
+            <nav>
+                <a id='inicio_sesion' href="form_crea_usuario">Registro usuario</a>
+            </nav>
+        </div>
+
+        <header>
+            <h1>FREE TO PLAY</h1>
+        </header>
+        {% load static%}
+        <main>
+            <ul class="listado-producto">
+                <li>
+                    <h2>Genshin Impact</h2>
+                    <img src="{% static 'core/img/f2p_genshin.png' %}" alt="Genshin Impact">
+                    <p class="descripcion-producto">El mundo de Teyvat está abierto para explorar. Acompaña a Lumine junto a Paimon en busqueda de su hermano perdido</p>
+                    <p class="precio-producto">Gratis</p>
+                </li>
+                <li>
+                    <h2>Honkai Star Rail</h2>
+                    <img src="{% static 'core/img/f2p_honkai.png' %}" alt="Honkai Star Rail">
+                    <p class="descripcion-producto">Luego del éxito de Honkai 3rd Impact, llega Honkari Star Rail con antiguos y nuevos personjaes en una nueva historia a descubrir</p>
+                    <p class="precio-producto">Gratis</p>
+                </li>
+            </ul>
+        </main>
+
+        <footer>
+            <p class="texto-footer">Juegos Rata es una tienda exclusivamente online. Encuentranos en nuestras redes sociales:</p>
+            {% load static%}
+            <div class="footer-block">
+                <div class="image-on-top">
+                    <img src="{% static 'core/img/icono_insta.png' %}" alt="Instagram">
+                    <img src="{% static 'core/img/icono_tiktok.png' %}" alt="Tik Tok">
+                    <img src="{% static 'core/img/icono_x.png' %}" alt="Twitter">
+                </div>
+            </div>
+        </footer>
+
+    </body>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% load static%}
+    <script src="{% static 'js/validaciones.js' %}"></script>
+
+    <head>
+      {% load static%}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HORA RATA</title>
+        <link rel="stylesheet" href="{% static 'core/css/reset.css' %}">
+        <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    </head>
+
+    <body>          
+        
+      <div>
+        <a id="inicio" href="/">>>>Inicio</a>
+        <nav>
+            <a id='inicio_sesion' href="form_crea_usuario">Registro usuario</a>
+        </nav>
+      </div>    
+
+        <header>            
+            <h1>
+                REGISTRO USUARIO
+            </h1>
+
+        </header>
+
+        <main>
+            <br>
+
+            <div class='formulario'>
+              <br><br>
+              <form method="post" action="" id="formulario_registro" onreset="location.reload()">
+                  {% csrf_token %}
+                  {% for field in form%}
+                      <div id="campo_formulario">
+                      <label for="{{field.id_for_label}}">
+                          {{field.label}}
+                      </label><br>
+                      {{field}}
+                      </div>
+                  {% endfor %}
+                  <button type="submit" class="btn btn-primary">Enviar</button>
+                  <button type="button" class="btn btn-secondary" onclick="limpiarFormulario()">Limpiar</button>
+              </form>
+            </div>
+            <div class="alert alert-success" role="alert">
+              {{ mensaje }}
+            </div>
+        </main>
+    
+        <footer>
+            <p class="texto-footer">Juegos Rata es una tienda exclusivamente online. Encuentranos en nuestras redes sociales:</p>
+            {% load static%}
+            <div class="footer-block">
+                <div class="image-on-top">
+                  <img src="{% static 'core/img/icono_insta.png' %}" alt="Instagram">
+                  <img src="{% static 'core/img/icono_tiktok.png' %}" alt="Tik Tok">
+                  <img src="{% static 'core/img/icono_x.png' %}" alt="Twitter">
+                </div>
+            </div>
+        </footer>
+
+    </body>
+
+</html>
