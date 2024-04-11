@@ -194,7 +194,10 @@ footer {
 }
 
 #campo_formulario {
+    display:block;
     padding: 10px;
     margin: auto;
     border-radius: 5px;
 }
+
+
