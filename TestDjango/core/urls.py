@@ -1,4 +1,4 @@
-from .views import home, inicioSesion, deportes, accion, freeToPlay, mmorpg, rpg, form_crea_usuario, form_login
+from .views import home, inicioSesion, deportes, accion, freeToPlay, mmorpg, rpg, form_crea_usuario, form_login, categoria
 from django.urls import path
 
 urlpatterns = [
@@ -11,5 +11,6 @@ urlpatterns = [
     path('rpg',rpg,name="rpg"),
     path('form_crea_usuario',form_crea_usuario,name="form_crea_usuario"),
     path('form_login',form_login,name="form_login"),
+    path('categoria/<id>/<nombre>',categoria,name="categoria"),
     
     ]

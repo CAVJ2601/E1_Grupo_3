@@ -1,10 +1,15 @@
+from .forms import UsuarioForm, LoginForm
+from .models import Usuario, CategoriaJuego, Juego
 from django.shortcuts import render, redirect
-from .forms import UsuarioForm
 
 # Create your views here.
 
 def home(request):
-    return render(request, "core/home.html")
+    categorias = CategoriaJuego.objects.all()
+    datos = {
+        'categorias':categorias
+    }
+    return render(request, "core/home.html", datos)
 
 def inicioSesion(request):
     return render(request, "core/inicioSesion.html")
@@ -24,13 +29,16 @@ def mmorpg(request):
 def rpg(request):
     return render(request, "core/rpg.html")
 
-#from django.shortcuts import render
-from .forms import UsuarioForm, LoginForm
-from .models import Usuario
-from django.shortcuts import render, redirect
+def categoria(request, id, nombre):
+    print("id " + id)
+    print("nombre " + nombre)
+    juegos = Juego.objects.filter(id_categoria=id)
+    datos = {
+        'nombre':nombre,
+        'juegos':juegos
+    }
 
-
-# Create your views here.
+    return render(request, "core/categoria.html", datos)
 
 def form_crea_usuario(request):
     datos = {
