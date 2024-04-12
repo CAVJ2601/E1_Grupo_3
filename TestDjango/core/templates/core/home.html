@@ -38,11 +38,9 @@
             <br><br>
 
             <div class="categorias-principal">
-                <a class="categorias" href="freeToPlay">Free To Play</a>
-                <a class="categorias" href="mmorpg">MMORPG</a>
-                <a class="categorias" href="rpg">RPG</a>
-                <a class="categorias" href="accion">Acción</a>
-                <a class="categorias" href="deportes">Deportes</a>
+                {% for cat in categorias %}
+                <a class="categorias" href="{% url 'categoria' cat.id_categoria cat.nombre_categoria%}">{{cat.nombre_categoria}}</a>
+                {% endfor %}
             </div>
         </main>
 
