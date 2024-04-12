@@ -19,7 +19,7 @@
       <div>
         <a id="inicio" href="/">>>>Inicio</a>
         <nav>
-            <a id='inicio_sesion' href="form_crea_usuario">Registro usuario</a>
+            <a id='inicio_sesion' href="{% url 'form_crea_usuario' %}">Registro usuario</a>
         </nav>
       </div>    
 
@@ -35,7 +35,7 @@
 
             <div class='formulario'>
               <br><br>
-              <form method="post" onsubmit="validaForm()" id="formulario_login" onreset="location.reload()">
+              <form method="post" id="formulario_login" onreset="location.reload()">
                   {% csrf_token %}
                   {% for field in form%}
                       <div id="campo_formulario">
