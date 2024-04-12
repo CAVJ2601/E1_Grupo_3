@@ -10,6 +10,53 @@ header {
     padding: 150px;
 }
 
+#nav_top {
+    text-decoration: none;
+    margin-top: 20px;
+    font-family: 'Monserrat', sans-serif;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    color: beige;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: aliceblue;
+    border-width: 1px;
+    padding: 5px;  
+}
+
+#nav_bottom {
+    position:absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    text-decoration: none;
+    margin-top: 20px;
+    font-family: 'Monserrat', sans-serif;
+    text-align: center;
+    color: beige;
+    box-sizing:content-box
+    border-style: solid;
+    border-color: aliceblue;
+    border-width: 1px;
+    padding: 5px;  
+    width: 100;
+}
+
+.opcion_menu_top{
+    display: inline;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    padding: 20px;
+    color: whitesmoke;
+    font-weight: bold;    
+}
+.opcion_menu_top:hover {
+    color: rgb(165, 191, 214);
+    border-color: rgb(165, 191 ,214);
+}
+
 #inicio {
     position: absolute;
     display: flex;
@@ -37,7 +84,7 @@ header {
     border-style: solid;
     border-color: aliceblue;
     border-width: 1px;
-    width: 120px;
+    width: 300px;
     padding: 5px;              
 }
 
@@ -54,7 +101,7 @@ header h1 {
 }
 
 header h2 {
-    font-size: 100px;
+    font-size: 50px;
     font-weight: bold;
     color:antiquewhite;
     text-shadow: 10px 10px #404a6d;
@@ -199,5 +246,21 @@ footer {
     margin: auto;
     border-radius: 5px;
 }
+
+td {
+    max-width: 500px;
+    text-decoration: none;
+    text-align: center;
+    margin: 5 auto;
+    padding: 3px 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: antiquewhite;
+    border: 1px solid #81889c;
+    border-radius: 5px;
+    background-color: #0d1324;
+}
+
+
+
 
 

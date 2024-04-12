@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Usuario
+from .models import Usuario, CategoriaJuego
 
 class DateInput(forms.DateInput):
     input_type = 'date'
@@ -28,4 +28,10 @@ class LoginForm(ModelForm):
     class Meta:
         model = Usuario
         fields = ['usuario','password']
+
+class CategoriasForm(ModelForm):
+
+    class Meta:
+        model = CategoriaJuego
+        fields = ['id_categoria','nombre_categoria']
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+   
     <head>
         {% load static%}
         <meta charset="UTF-8">
@@ -11,34 +11,40 @@
     </head>
 
     <body>
-
         <div>
             <a id="inicio" href="/">>>>Inicio</a>
             <nav>
                 <a id='inicio_sesion' href="{% url 'form_crea_usuario' %}">Registro usuario</a>
-            </nav>
+                
+            </nav> 
         </div>
-
+        
         <header>
-            <h1>{{nombre}}</h1>
+            <h2>
+                ADMINISTRADOR DE CATEGORÍAS
+            </h2>
         </header>
-        {% load static%}
+
         <main>
-            <ul class="listado-producto">
-                {% for juego in juegos %}
-                <li>
-                    <h2>{{ juego.nombre_juego }}</h2>
-                        <img src="{{juego.url_img_juego}}" alt="{{ juego.nombre_juego }}">
-                    <p class="descripcion-producto">{{ juego.descripcion_juego }}</p>
-                    <p class="precio-producto">
-                        {% if juego.precio_juego == 0 %}
-                            GRATIS </p>
-                        {% else %}
-                            ${{juego.precio_juego}}</p>
-                        {% endif %}
-                </li>
+
+            <br><br>
+
+            <div class="categorias-principal">
+                <table>
+                {% for cat in categorias %}
+                <tr>
+                    <td>{{cat.id_categoria}}</td>                    
+                    <td>{{cat.nombre_categoria}}</td>
+                    <td><a class="opcion_menu_top" href="{% url 'form_mod_categoria' cat.id_categoria %}" >Modificar</a></td>
+                    <td><a class="opcion_menu_top" href="{% url 'form_del_categoria' cat.id_categoria %}" >Eliminar</a></td>
+                </tr>
                 {% endfor %}
-            </ul>
+                 </table>
+                 
+            </div>
+            <nav id="nav_bottom">
+                <a class="opcion_menu_top" href="{% url 'form_crea_categoria' %}" >Nueva</a>
+            </nav>
         </main>
 
         <footer>
@@ -52,5 +58,6 @@
                 </div>
             </div>
         </footer>
-
     </body>
+
+</html>

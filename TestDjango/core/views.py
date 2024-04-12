@@ -1,4 +1,4 @@
-from .forms import UsuarioForm, LoginForm
+from .forms import UsuarioForm, LoginForm, CategoriasForm
 from .models import Usuario, CategoriaJuego, Juego
 from django.shortcuts import render, redirect
 
@@ -14,21 +14,6 @@ def home(request):
 def inicioSesion(request):
     return render(request, "core/inicioSesion.html")
 
-def accion(request):
-    return render(request, "core/accion.html")
-
-def deportes(request):
-    return render(request, "core/deportes.html")
-
-def freeToPlay(request):
-    return render(request, "core/freeToPlay.html")
-
-def mmorpg(request):
-    return render(request, "core/mmorpg.html")
-
-def rpg(request):
-    return render(request, "core/rpg.html")
-
 def categoria(request, id, nombre):
     print("id " + id)
     print("nombre " + nombre)
@@ -39,6 +24,61 @@ def categoria(request, id, nombre):
     }
 
     return render(request, "core/categoria.html", datos)
+
+def lista_categorias(request):
+
+    categorias = CategoriaJuego.objects.all().order_by('id_categoria')
+    print("cantidad de categorias")
+    print(categorias.count())
+    datos = {
+        'categorias':categorias
+    }
+    return render(request, "core/lista_categorias.html", datos)
+
+
+def form_mod_categoria(request, id):
+
+    categoria = CategoriaJuego.objects.get(id_categoria=id)
+    print("cantidad a modificar")
+    print(id)
+    datos = {
+        'form':CategoriasForm(instance=categoria),
+    }
+    if request.method == 'POST':
+        formulario = CategoriasForm(request.POST, request.FILES, instance=categoria)
+        formulario.save()
+        return redirect('/lista_categorias')
+        
+    return render(request, 'core/form_mod_categoria.html', datos)
+
+def form_del_categoria(request, id):
+
+    categoria = CategoriaJuego.objects.get(id_categoria=id)
+    print("id a borrar")
+    print(id)
+
+    if request.method == 'POST':
+        categoria.delete()
+       
+        return redirect('/lista_categorias')
+    
+    return render(request, 'core/form_del_categoria.html', {'categoria':categoria})
+
+def form_crea_categoria(request):
+    datos = {
+        'form': CategoriasForm()
+    }
+    print("Entrando a vista crea categoria")
+    if request.method == 'POST':
+        formulario = CategoriasForm(request.POST, request.FILES)
+        if formulario.is_valid(): 
+            print("Formulario correcto")
+            formulario.save()
+            datos['mensaje'] = "Guardado correctamente"
+        else: 
+            datos['mensaje'] = "Error " + formulario.errors.as_text()
+        
+    return render(request, 'core/form_crea_categoria.html', datos)
 
 def form_crea_usuario(request):
     datos = {

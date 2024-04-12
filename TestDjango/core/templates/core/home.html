@@ -13,11 +13,11 @@
     <body>
         <div>
             <a id="inicio" href="/">>>>Inicio</a>
-            <nav>
-                <a id='inicio_sesion' href="form_crea_usuario">Registro usuario</a>
+            <nav id="nav_top"> 
+                <a class="opcion_menu_top" href="{% url 'lista_categorias' %}">Administrar categorías</a>
+                <a class="opcion_menu_top" href="{% url 'form_crea_usuario' %}">Registro usuario</a>
             </nav>
-        </div>
-        
+          </div>    
         <header>
             <h1>
                 VIDEOJUEGOS A TU ALCANCE
