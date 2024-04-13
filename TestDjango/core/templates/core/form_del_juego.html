@@ -13,36 +13,27 @@
     <body>
         <div>
             <a id="inicio" href="/">>>>Inicio</a>
-            <nav id="nav_top"> 
-                <a class="opcion_menu_top" href="{% url 'lista_juegos' %}">Administrar juegos</a>
-                <a class="opcion_menu_top" href="{% url 'lista_categorias' %}">Administrar categorías</a>
-                <a class="opcion_menu_top" href="{% url 'form_crea_usuario' %}">Registro usuario</a>
-                <a class="opcion_menu_top" href="{% url 'form_login' %}">Iniciar sesión</a>
+            <nav>
+                <a id='inicio_sesion' href="{% url 'form_crea_usuario' %}">Registro usuario</a>
             </nav>
-          </div>    
+        </div>
+        
         <header>
-            <h1>
-                VIDEOJUEGOS A TU ALCANCE
-            </h1>
+            <h2>
+                ADMINISTRADOR DE CATEGORÍAS
+            </h2>
         </header>
 
         <main>
-            <div>
-                <p id="titulo_cat">CATEGORIAS</p>
-            </div>
 
             <br>
-
-            <div>
-                <p id="des_cat">Encuentra nuestra gran variedad de juegos, contando con distintos títulos de los más clásicos a los últimos lanzamientos.</p>
-            </div>
-
-            <br><br>
-
-            <div class="categorias-principal">
-                {% for cat in categorias %}
-                <a class="categorias" href="{% url 'categoria' cat.id_categoria cat.nombre_categoria%}">{{cat.nombre_categoria}}</a>
-                {% endfor %}
+            <h2>Está seguro que desea eliminar la categoría {{ juego.nombre_juego }}</h2>
+            <div class="formulario">
+                <form method="post" id="formulario_registro" enctype="multipart/form-data" onreset="location.reload()"">
+                    {% csrf_token %}
+                      <input type="submit" value="Eliminar">
+                    </div>
+                </form>
             </div>
         </main>
 

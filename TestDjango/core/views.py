@@ -1,4 +1,4 @@
-from .forms import UsuarioForm, LoginForm, CategoriasForm
+from .forms import UsuarioForm, LoginForm, CategoriasForm, JuegoForm 
 from .models import Usuario, CategoriaJuego, Juego
 from django.shortcuts import render, redirect
 
@@ -75,6 +75,7 @@ def form_crea_categoria(request):
             print("Formulario correcto")
             formulario.save()
             datos['mensaje'] = "Guardado correctamente"
+            return redirect('/lista_categorias')
         else: 
             datos['mensaje'] = "Error " + formulario.errors.as_text()
         
@@ -126,3 +127,59 @@ def form_login(request):
 
         
     return render(request, 'core/form_login.html', datos)
+
+def lista_juegos(request):
+
+    juegos = Juego.objects.all().order_by('id_juego')
+    print("cantidad de juegos")
+    print(juegos.count())
+    datos = {
+        'juegos':juegos
+    }
+    return render(request, "core/lista_juegos.html", datos)
+
+
+def form_mod_juego(request, id):
+
+    juego = Juego.objects.get(id_juego=id)
+    print("juego a modificar")
+    print(id)
+    datos = {
+        'form':JuegoForm(instance=juego),
+    }
+    if request.method == 'POST':
+        formulario = JuegoForm(request.POST, request.FILES, instance=juego)
+        formulario.save()
+        return redirect('/lista_juegos')
+        
+    return render(request, 'core/form_mod_juego.html', datos)
+
+def form_del_juego(request, id):
+
+    juego = Juego.objects.get(id_juego=id)
+    print("id a borrar")
+    print(id)
+
+    if request.method == 'POST':
+        juego.delete()
+       
+        return redirect('/lista_juegos')
+    
+    return render(request, 'core/form_del_juego.html', {'juego':juego})
+
+def form_crea_juego(request):
+    datos = {
+        'form': JuegoForm()
+    }
+    print("Entrando a vista crea juego")
+    if request.method == 'POST':
+        formulario = JuegoForm(request.POST, request.FILES)
+        if formulario.is_valid(): 
+            print("Formulario correcto")
+            formulario.save()
+            datos['mensaje'] = "Guardado correctamente"
+            return redirect('/lista_juegos')
+        else: 
+            datos['mensaje'] = "Error " + formulario.errors.as_text()
+        
+    return render(request, 'core/form_crea_juego.html', datos)

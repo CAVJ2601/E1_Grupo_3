@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+    <head>
+      {% load static%}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HORA RATA</title>
+        <link rel="stylesheet" href="{% static 'core/css/reset.css' %}">
+        <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    </head>
+
+    <body>          
+        
+      <div>
+        <a id="inicio" href="/">>>>Inicio</a>
+        <nav>
+            <a id='inicio_sesion' href="{% url 'form_crea_usuario' %}">Registro usuario</a>
+        </nav>
+      </div>    
+
+        <header>            
+            <h1>
+                Nuevo Juego
+            </h1>
+
+        </header>
+
+        <main>
+            <br>
+
+            <div class='formulario'>
+              <br><br>
+              <form method="post" id="formulario_nuevo_juego" onreset="location.reload()">
+                  {% csrf_token %}
+                  {% for field in form%}
+                      <div id="campo_formulario">
+                      <label for="{{field.id_for_label}}">
+                          {{field.label}}
+                      </label><br>
+                      {{field}}
+                      </div>
+                  {% endfor %}
+                  <div id="campo_formulario">
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Limpiar">
+                  </div>
+              </form>
+            </div>
+            <div class="alert alert-success" role="alert">
+              {{ mensaje }}
+            </div>
+        </main>
+    
+        <footer>
+            <p class="texto-footer">Juegos Rata es una tienda exclusivamente online. Encuentranos en nuestras redes sociales:</p>
+            {% load static%}
+            <div class="footer-block">
+                <div class="image-on-top">
+                  <img src="{% static 'core/img/icono_insta.png' %}" alt="Instagram">
+                  <img src="{% static 'core/img/icono_tiktok.png' %}" alt="Tik Tok">
+                  <img src="{% static 'core/img/icono_x.png' %}" alt="Twitter">
+                </div>
+            </div>
+        </footer>
+        {% load static%}
+        <script src="{% static 'core/js/validaciones.js' %}"></script>
+    </body>
+
+
+</html>
