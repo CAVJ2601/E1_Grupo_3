@@ -18,6 +18,7 @@ class UsuarioForm(ModelForm):
         correo = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario'}))
         password = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario'}))
         direccion = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario'}))
+        perfil = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario', 'type':'hidden'}))
 
         widgets = {
             'fecha_nac': DateInput(attrs={'class':'campo_formulario'}),

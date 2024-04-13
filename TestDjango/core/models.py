@@ -1,6 +1,14 @@
 from django.db import models
 
 # Create your models here.
+
+class Perfil(models.Model):
+    id_perfil = models.CharField(max_length=20, primary_key=True, verbose_name='Código perfil')
+    nombre_perfil = models.CharField(max_length=50, verbose_name='Nombre perfil')
+
+    def __str__(self):
+        return self.nombre_perfil
+
 class Usuario(models.Model):
     usuario = models.CharField(max_length=20, primary_key=True, verbose_name='Nombre usuario')
     nombre = models.CharField(max_length=50, verbose_name='Nombre completo')
@@ -8,9 +16,11 @@ class Usuario(models.Model):
     password = models.CharField(max_length=20,verbose_name='Password')
     fecha_nac = models.DateField(verbose_name='Fecha de nacimiento')
     direccion = models.CharField(max_length=100,verbose_name='Dirección despacho')
+    id_perfil = models.ForeignKey(Perfil, default="1", on_delete=models.CASCADE)
 
     def __str__(self):
         return self.usuario
+
     
 class CategoriaJuego(models.Model):
     id_categoria = models.CharField(max_length=20, primary_key=True, verbose_name='Código categoría')

@@ -14,10 +14,22 @@
         <div>
             <a id="inicio" href="/">>>>Inicio</a>
             <nav id="nav_top"> 
-                <a class="opcion_menu_top" href="{% url 'lista_juegos' %}">Administrar juegos</a>
-                <a class="opcion_menu_top" href="{% url 'lista_categorias' %}">Administrar categorías</a>
-                <a class="opcion_menu_top" href="{% url 'form_crea_usuario' %}">Registro usuario</a>
-                <a class="opcion_menu_top" href="{% url 'form_login' %}">Iniciar sesión</a>
+                {% if usuario_conectado != '' %}
+                    <p class="opcion_menu_top"> Usuario conectado: {{ usuario_conectado }} </p>
+                {% else %}
+                    <p class="opcion_menu_top"> Inicie sesión o regístre su usuario </p>
+                {% endif %}
+                {% if role == '2' %}
+                    <a class="opcion_menu_top" href="{% url 'lista_juegos' %}">Administrar juegos</a>
+                    <a class="opcion_menu_top" href="{% url 'lista_categorias' %}">Administrar categorías</a>
+                {% endif %}
+                
+                {% if usuario_conectado == '' %}
+                    <a class="opcion_menu_top" href="{% url 'form_login' %}">Iniciar sesión</a>
+                    <a class="opcion_menu_top" href="{% url 'form_crea_usuario' %}">Registro usuario</a>  
+                {% else %}
+                    <a class="opcion_menu_top" href="{% url 'cerrar_sesion' %}">Cerrar sesión</a>
+                {% endif %}
             </nav>
           </div>    
         <header>
