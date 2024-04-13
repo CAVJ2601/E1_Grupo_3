@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Usuario, CategoriaJuego
+from .models import Usuario, CategoriaJuego, Juego
 
 class DateInput(forms.DateInput):
     input_type = 'date'
@@ -34,4 +34,10 @@ class CategoriasForm(ModelForm):
     class Meta:
         model = CategoriaJuego
         fields = ['id_categoria','nombre_categoria']
+
+class JuegoForm(ModelForm):
+
+    class Meta:
+        model = Juego
+        fields = ['id_juego','nombre_juego','descripcion_juego','url_img_juego' ,'precio_juego','id_categoria']
 
