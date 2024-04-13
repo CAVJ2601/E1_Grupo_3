@@ -1,18 +1,27 @@
 from .forms import UsuarioForm, LoginForm, CategoriasForm, JuegoForm 
-from .models import Usuario, CategoriaJuego, Juego
+from .models import Usuario, CategoriaJuego, Juego, Perfil
 from django.shortcuts import render, redirect
+from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 
 def home(request):
+    usuario_conectado = request.session.get('user', '')
+    role = request.session.get('role', '1')
+
     categorias = CategoriaJuego.objects.all()
     datos = {
-        'categorias':categorias
+        'categorias':categorias,
+        'usuario_conectado':usuario_conectado,
+        'role':role
     }
+    print("Rol en home " + role)
     return render(request, "core/home.html", datos)
 
-def inicioSesion(request):
-    return render(request, "core/inicioSesion.html")
+def cerrar_sesion(request):
+    request.session['user'] = ''
+    request.session['role'] = '1'
+    return render(request, "core/cerrar_sesion.html")
 
 def categoria(request, id, nombre):
     print("id " + id)
@@ -98,8 +107,13 @@ def form_crea_usuario(request):
     return render(request, 'core/form_crea_usuario.html', datos)
 
 def form_login(request):
+
+    request.session['user'] = ''
+    request.session['role'] = '1'
+
     datos = {
-        'form': LoginForm()
+        'form': LoginForm(),
+        'perfil':''
     }
     print("Entrando a vista login")
     if request.method == 'POST':
@@ -107,23 +121,34 @@ def form_login(request):
         data = request.POST
         usuario_form = data.get('usuario')
         clave_form = data.get('password')
-
+        
         print("usuario_form " + usuario_form)
         print("clave_form " + clave_form)
-        user = Usuario.objects.get(usuario=usuario_form)
+        
+        try:
+            user = Usuario.objects.get(usuario=usuario_form)
+        
 
-        clave = user.password
-        print("clave " + clave)
+            clave = user.password
+            role = user.id_perfil.id_perfil
+            print("clave " + clave)
 
 
 
-        print("Formulario correcto")
-        if clave == clave_form:
-            print("clave correcta " + clave)
-            datos['mensaje'] = "Clave correcta"
-        else:
-            print("clave incorrecta" + clave)
-            datos['mensaje'] = "Clave incorrecta"
+            print("Formulario correcto")
+            if clave == clave_form:
+                print("clave correcta " + clave)
+                datos['mensaje'] = "Clave correcta"
+                request.session['user'] = usuario_form
+                request.session['role'] = role
+                print("Role " + role)
+                datos['role'] = role
+            else:
+                print("clave incorrecta" + clave)
+                datos['mensaje'] = "Clave incorrecta"
+
+        except ObjectDoesNotExist:
+            datos['mensaje'] = "Usuario no existe, por favor regístrese"
 
         
     return render(request, 'core/form_login.html', datos)

@@ -27,7 +27,7 @@
 
         <header>            
             <h1>
-                REGISTRO USUARIO
+                SESION CERRADA
             </h1>
 
         </header>
@@ -35,35 +35,7 @@
         <main>
             <br>
 
-            <div class='formulario'>
-              <br><br>
-              <form method="post" id="formulario_registro" onreset="location.reload()">
-                  {% csrf_token %}
-                  {% for field in form%}
-                      <div id="campo_formulario">
-                      <label for="{{field.id_for_label}}">
-                          {{field.label}}
-                      </label><br>
-                      {{field}}
-                      </div>
-                      {% if field.id_for_label == 'id_password' %}
-                      <div id="campo_formulario">
-                        <label for="id_password2">
-                            Repita Password
-                        </label><br>
-                        <input type="text" name="password2" maxlength="20" required id="id_password2">
-                      </div>
-                      {% endif %}
-                  {% endfor %}
-                  <div id="campo_formulario">
-                    <input type="submit" value="Enviar">
-                    <input type="reset" value="Limpiar">
-                  </div>
-              </form>
-            </div>
-            <div class="alert alert-success" role="alert">
-              {{ mensaje }}
-            </div>
+
         </main>
     
         <footer>
@@ -77,8 +49,6 @@
                 </div>
             </div>
         </footer>
-        {% load static%}
-        <script src="{% static 'core/js/validaciones.js' %}"></script>
     </body>
 
 

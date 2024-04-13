@@ -19,8 +19,10 @@
       <div>
         <a id="inicio" href="/">>>>Inicio</a>
         <nav>
-            <a id='inicio_sesion' href="{% url 'form_crea_usuario' %}">Registro usuario</a>
-        </nav>
+          {% if role == '2' %}
+            <p id='inicio_sesion'>Su perfil es Administrador</a>
+          {% endif %}
+      </nav>
       </div>    
 
         <header>            

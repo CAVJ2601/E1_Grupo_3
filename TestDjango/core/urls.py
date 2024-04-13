@@ -1,11 +1,11 @@
-from .views import home, inicioSesion, form_crea_usuario, form_login, categoria, lista_categorias, form_mod_categoria, form_del_categoria, form_crea_categoria, lista_juegos, form_mod_juego, form_del_juego, form_crea_juego
+from .views import home, form_crea_usuario, form_login, categoria, lista_categorias, form_mod_categoria, form_del_categoria, form_crea_categoria, lista_juegos, form_mod_juego, form_del_juego, form_crea_juego, cerrar_sesion
 from django.urls import path
 
 urlpatterns = [
     path('',home,name="home"),
-    path('inicioSesion',inicioSesion,name="inicioSesion"),
     path('form_crea_usuario',form_crea_usuario,name="form_crea_usuario"),
     path('form_login',form_login,name="form_login"),
+    path('cerrar_sesion',cerrar_sesion,name="cerrar_sesion"),
     path('categoria/<id>/<nombre>',categoria,name="categoria"),
     path('lista_categorias',lista_categorias,name="lista_categorias"),
     path('form_crea_categoria',form_crea_categoria,name="form_crea_categoria"),
