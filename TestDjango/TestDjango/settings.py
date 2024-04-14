@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'xe',
         'USER': 'Wiki_Juego',
         'PASSWORD': 'Wiki_S5',
-        'HOST': '192.168.1.90',
+        'HOST': 'localhost',
         'PORT': '1521',
         'TEST': {
             'USER':'default_test',
