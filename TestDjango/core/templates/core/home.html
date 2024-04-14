@@ -17,7 +17,7 @@
                 {% if usuario_conectado != '' %}
                     <p class="opcion_menu_top"> Usuario conectado: {{ usuario_conectado }} </p>
                 {% else %}
-                    <p class="opcion_menu_top"> Inicie sesión o regístre su usuario </p>
+                    <p class="opcion_menu_top"> Inicie sesión o registre su usuario</p>
                 {% endif %}
                 {% if role == '2' %}
                     <a class="opcion_menu_top" href="{% url 'lista_juegos' %}">Administrar juegos</a>
