@@ -36,7 +36,8 @@ class Juego(models.Model):
     url_img_juego = models.CharField(max_length=50, verbose_name='URL imagen')
     precio_juego = models.IntegerField(verbose_name="Precio")
     id_categoria = models.ForeignKey(CategoriaJuego, on_delete=models.CASCADE)
+    imagen_juego = models.ImageField(upload_to='imagenes/', null=True, verbose_name='Imagen del juego')
 
     def __str__(self):
-        return self.nombre_categoria
+        return self.nombre_juego
 

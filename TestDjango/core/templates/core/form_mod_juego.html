@@ -31,7 +31,7 @@
             <br>
 
             <div class="formulario">
-                <form method="post" id="formulario_registro" enctype="multipart/form-data" onreset="location.reload()"">
+                <form method="post" id="formulario_registro" enctype="multipart/form-data" onreset="location.reload()">
                     {% csrf_token %}
                     {% for field in form%}
                         <div id="campo_formulario">

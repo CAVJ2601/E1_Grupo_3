@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Usuario, CategoriaJuego, Juego
+from .models import Usuario, CategoriaJuego, Juego, Perfil
 
 class DateInput(forms.DateInput):
     input_type = 'date'

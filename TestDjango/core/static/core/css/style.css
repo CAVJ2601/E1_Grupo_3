@@ -36,7 +36,7 @@ header {
     font-family: 'Monserrat', sans-serif;
     text-align: center;
     color: beige;
-    box-sizing:content-box
+    box-sizing:content-box;
     border-style: solid;
     border-color: aliceblue;
     border-width: 1px;
@@ -52,6 +52,16 @@ header {
     color: whitesmoke;
     font-weight: bold;    
 }
+
+.opcion_menu_top2{
+    display: inline;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    padding: 20px;
+    color: whitesmoke;
+    font-weight: bold;    
+}
+
 .opcion_menu_top:hover {
     color: rgb(165, 191, 214);
     border-color: rgb(165, 191 ,214);
