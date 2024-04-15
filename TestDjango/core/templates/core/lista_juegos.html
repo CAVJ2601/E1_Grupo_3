@@ -12,7 +12,7 @@
 
     <body>
         <div>
-            <a id="inicio" href="/">>>>Inicio</a>
+            <a id="inicio" href="/">>Inicio</a>
             <nav>
                 {% if role == '2' %}
                   <p id='inicio_sesion'>Su perfil es Administrador</a>
@@ -30,7 +30,7 @@
 
             <div class="contenido">
                 <br><br>
-
+                <div class="listado-producto">
                 <div class="categorias-principal">
                     <table>
                     {% for juego in juegos %}
@@ -45,7 +45,7 @@
                     </tr>
                     {% endfor %}
                     </table>
-                 
+                </div> 
                 </div>
                 <nav id="nav_bottom">
                     <a class="opcion_menu_top" href="{% url 'form_crea_juego' %}" >Nuevo</a>

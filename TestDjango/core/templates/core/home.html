@@ -12,10 +12,10 @@
 
     <body>
         <div>
-            <a id="inicio" href="/">>>>Inicio</a>
+            <a id="inicio" href="/">>Inicio</a>
             <nav id="nav_top"> 
                 {% if usuario_conectado != '' %}
-                    <p class="opcion_menu_top"> Usuario conectado: {{ usuario_conectado }} </p>
+                    <a class="opcion_menu_top" href="{% url 'perfil_usuario' %}"> Perfil: {{ usuario_conectado }} </a>
                 {% else %}
                     <p class="opcion_menu_top"> Inicie sesión o registre su usuario</p>
                 {% endif %}

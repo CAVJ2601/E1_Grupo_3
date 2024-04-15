@@ -129,6 +129,9 @@ main{
     backdrop-filter: blur(20px);
     padding: 100px;
     margin: auto;
+    border: 1px solid #81889c;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
 }
 
 .container-categorias {
@@ -150,6 +153,7 @@ main{
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .categorias {
@@ -175,6 +179,9 @@ main{
     margin: 0 auto;
     padding: 50px;
     color:#81889c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .listado-producto li {
@@ -208,7 +215,7 @@ main{
 }
 
 .listado-producto li:hover {
-    border-color: aquamarine;
+    border-color: #C78C19;
     font-size: larger;
 }
 
@@ -295,7 +302,8 @@ td {
     transform: translate(-50%,1450%);
     background-color: transparent;
     border: 0px solid;
-    color:antiquewhite;
+    color: #C78C19;
+    text-shadow: -1px 0 #0d1324, 0 1px #0d1324, 1px 0 #0d1324, 0 -1px #0d1324;
 }
 
 

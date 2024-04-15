@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-   
+
     <head>
         {% load static%}
         <meta charset="UTF-8">
@@ -11,41 +11,23 @@
     </head>
 
     <body>
+
         <div>
             <a id="inicio" href="/">>Inicio</a>
-            <nav>
-                {% if role == '2' %}
-                  <p id='inicio_sesion'>Su perfil es Administrador</a>
-                {% endif %}
-            </nav> 
         </div>
-        
-        <header>
-            <h2>
-                ADMINISTRADOR DE CATEGORÍAS
-            </h2>
-        </header>
 
+        <header>
+            {% if usuario_conectado != '' %}
+            <h1>Hola {{ usuario_conectado }}</h1>
+            {% else %}
+            <h1>Inicia sesión</h1>
+            {% endif %}
+        </header>
+        
         <main>
             <div class="contenido">
-                <br><br>
+                
 
-                <div class="categorias-principal">
-                    <table>
-                    {% for cat in categorias %}
-                    <tr>
-                        <td>{{cat.id_categoria}}</td>                    
-                        <td>{{cat.nombre_categoria}}</td>
-                        <td><a class="opcion_menu_top" href="{% url 'form_mod_categoria' cat.id_categoria %}" >Modificar</a></td>
-                        <td><a class="opcion_menu_top" href="{% url 'form_del_categoria' cat.id_categoria %}" >Eliminar</a></td>
-                    </tr>
-                    {% endfor %}
-                    </table>
-                 
-                </div>
-                <nav id="nav_bottom">
-                    <a class="opcion_menu_top" href="{% url 'form_crea_categoria' %}" >Nueva</a>
-                </nav>
             </div>
         </main>
 
@@ -60,6 +42,5 @@
                 </div>
             </div>
         </footer>
-    </body>
 
-</html>
+    </body>
