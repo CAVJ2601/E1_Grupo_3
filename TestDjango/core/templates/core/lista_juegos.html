@@ -28,27 +28,29 @@
 
         <main>
 
-            <br><br>
+            <div class="contenido">
+                <br><br>
 
-            <div class="categorias-principal">
-                <table>
-                {% for juego in juegos %}
-                <tr>                 
-                    <td>{{juego.nombre_juego}}</td>
-                    <td>{{juego.descripcion_juego}}</td>
-                    <td>{{juego.precio_juego}}</td>
-                    <td>{{juego.url_img_juego}}</td>
-                    <td><img height="100px" with="75px" src="{{juego.url_img_juego}}" alt="{{ juego.nombre_juego }}"></td>
-                    <td><a class="opcion_menu_top" href="{% url 'form_mod_juego' juego.id_juego %}" >Modificar</a></td>
-                    <td><a class="opcion_menu_top" href="{% url 'form_del_juego' juego.id_juego %}" >Eliminar</a></td>
-                </tr>
-                {% endfor %}
-                 </table>
+                <div class="categorias-principal">
+                    <table>
+                    {% for juego in juegos %}
+                    <tr>                 
+                        <td>{{juego.nombre_juego}}</td>
+                        <td>{{juego.descripcion_juego}}</td>
+                        <td>{{juego.precio_juego}}</td>
+                        <td>{{juego.url_img_juego}}</td>
+                        <td><img height="100px" with="75px" src="{{juego.url_img_juego}}" alt="{{ juego.nombre_juego }}"></td>
+                        <td><a class="opcion_menu_top" href="{% url 'form_mod_juego' juego.id_juego %}" >Modificar</a></td>
+                        <td><a class="opcion_menu_top" href="{% url 'form_del_juego' juego.id_juego %}" >Eliminar</a></td>
+                    </tr>
+                    {% endfor %}
+                    </table>
                  
+                </div>
+                <nav id="nav_bottom">
+                    <a class="opcion_menu_top" href="{% url 'form_crea_juego' %}" >Nuevo</a>
+                </nav>
             </div>
-            <nav id="nav_bottom">
-                <a class="opcion_menu_top" href="{% url 'form_crea_juego' %}" >Nuevo</a>
-            </nav>
         </main>
 
         <footer>

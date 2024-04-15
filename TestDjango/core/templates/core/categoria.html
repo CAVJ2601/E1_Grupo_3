@@ -26,21 +26,23 @@
         </header>
         {% load static%}
         <main>
-            <ul class="listado-producto">
-                {% for juego in juegos %}
-                <li>
-                    <h2>{{ juego.nombre_juego }}</h2>
-                        <img src="{{juego.url_img_juego}}" alt="{{ juego.nombre_juego }}">
-                    <p class="descripcion-producto">{{ juego.descripcion_juego }}</p>
-                    <p class="precio-producto">
-                        {% if juego.precio_juego == 0 %}
-                            GRATIS </p>
-                        {% else %}
-                            ${{juego.precio_juego}}</p>
-                        {% endif %}
-                </li>
-                {% endfor %}
-            </ul>
+            <div class="contenido">
+                <ul class="listado-producto">
+                    {% for juego in juegos %}
+                    <li>
+                        <h2>{{ juego.nombre_juego }}</h2>
+                            <img src="{{juego.url_img_juego}}" alt="{{ juego.nombre_juego }}">
+                        <p class="descripcion-producto">{{ juego.descripcion_juego }}</p>
+                        <p class="precio-producto">
+                            {% if juego.precio_juego == 0 %}
+                                GRATIS </p>
+                            {% else %}
+                                ${{juego.precio_juego}}</p>
+                            {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
         </main>
 
         <footer>

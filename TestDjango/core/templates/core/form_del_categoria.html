@@ -27,15 +27,16 @@
         </header>
 
         <main>
-
-            <br>
-            <h2>Está seguro que desea eliminar la categoría {{ categoria.nombre_categoria }}</h2>
-            <div class="formulario">
-                <form method="post" id="formulario_registro" enctype="multipart/form-data" onreset="location.reload()">
-                    {% csrf_token %}
-                      <input type="submit" value="Eliminar">
-                    </div>
-                </form>
+            <div class="contenido">
+                <br>
+                <h2>Está seguro que desea eliminar la categoría {{ categoria.nombre_categoria }}</h2>
+                <div class="formulario">
+                    <form method="post" id="formulario_registro" enctype="multipart/form-data" onreset="location.reload()">
+                        {% csrf_token %}
+                            <input type="submit" value="Eliminar">
+                        </div>
+                    </form>
+                </div>
             </div>
         </main>
 

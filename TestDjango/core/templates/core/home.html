@@ -39,22 +39,24 @@
         </header>
 
         <main>
-            <div>
-                <p id="titulo_cat">CATEGORIAS</p>
-            </div>
+            <div class="contenido">
+                <div>
+                    <p id="titulo_cat">CATEGORIAS</p>
+                </div>
 
-            <br>
+                <br>
 
-            <div>
-                <p id="des_cat">Encuentra nuestra gran variedad de juegos, contando con distintos títulos de los más clásicos a los últimos lanzamientos.</p>
-            </div>
+                <div>
+                    <p id="des_cat">Encuentra nuestra gran variedad de juegos, contando con distintos títulos de los más clásicos a los últimos lanzamientos.</p>
+                </div>
 
-            <br><br>
+                <br><br>
 
-            <div class="categorias-principal">
-                {% for cat in categorias %}
-                <a class="categorias" href="{% url 'categoria' cat.id_categoria cat.nombre_categoria%}">{{cat.nombre_categoria}}</a>
-                {% endfor %}
+                <div class="categorias-principal">
+                    {% for cat in categorias %}
+                    <a class="categorias" href="{% url 'categoria' cat.id_categoria cat.nombre_categoria%}">{{cat.nombre_categoria}}</a>
+                    {% endfor %}
+                </div>
             </div>
         </main>
 

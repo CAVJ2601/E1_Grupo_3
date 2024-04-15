@@ -80,8 +80,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.oracle',
         'NAME': 'xe',
-        'USER': 'Wiki_Juego',
-        'PASSWORD': 'Wiki_S5',
+        'USER': 'TIENDA3',
+        'PASSWORD': 'Tienda1234',
         'HOST': 'localhost',
         'PORT': '1521',
         'TEST': {
