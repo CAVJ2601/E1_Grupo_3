@@ -3,7 +3,7 @@ body {
     background-image: url(../img/bg_2.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed; 
+    background-attachment: fixed;
 }
 
 header {
@@ -104,10 +104,11 @@ header {
 }
 
 header h1 {
-    font-size: 100px;
+    font-size: 80px;
     font-weight: bold;
     color:antiquewhite;
     text-shadow: 10px 10px #404a6d;
+    text-align: center;
 }
 
 header h2 {
@@ -117,11 +118,17 @@ header h2 {
     text-shadow: 10px 10px #404a6d;
 }
 
-main {
-    background-color: #0d1324;
-    opacity: 0.6;
-    padding: 50px;
-    margin: 0 auto;
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido {
+    background: transparent;
+    backdrop-filter: blur(20px);
+    padding: 100px;
+    margin: auto;
 }
 
 .container-categorias {
@@ -149,12 +156,12 @@ main {
     text-decoration: none;
     text-align: center;
     color: antiquewhite;
-    width: 10%;
+    width: 20%;
     margin: 0 1%;
     padding: 30px 10px;
     box-sizing: border-box;
     border: 2px solid #81889c;
-    border-radius: 15px;
+    border-radius: 20px;
     font-weight: bold;
 }
 
@@ -179,7 +186,7 @@ main {
     margin: 0 1.5%;
     padding: 30px 20px;
     box-sizing: border-box;
-    border: 2px solid antiquewhite;
+    border: 2px solid #81889c;
     border-radius: 10px;
 }
 
@@ -237,26 +244,6 @@ footer {
     padding: 20px;
 }
 
-.formulario {
-    max-width: 500px;
-    text-decoration: none;
-    text-align: center;
-    margin: 0 auto;
-    padding: 3px 1px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: antiquewhite;
-    border: 1px solid #81889c;
-    border-radius: 5px;
-    background-color: #0d1324;
-}
-
-#campo_formulario {
-    display:block;
-    padding: 10px;
-    margin: auto;
-    border-radius: 5px;
-}
-
 td {
     max-width: 500px;
     text-decoration: none;
@@ -270,7 +257,45 @@ td {
     background-color: #0d1324;
 }
 
+/*Caja de estilo para formularios*/
 
+.formulario {
+    position: relative;
+    width: 350px;
+    height: 600px;
+    background: transparent;
+    border: 1px solid #81889c;
+    border-radius: 10px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+#campo_formulario{
+    padding: 10px;
+    width: 100%;
+}
+
+#campo_formulario label{
+    top:50%;
+    left:5px;
+    transform:translateY(-20%);
+    font-size: 1em;
+    color: antiquewhite;
+    font-weight: 500;
+    text-shadow: -1px 0 #0d1324, 0 1px #0d1324, 1px 0 #0d1324, 0 -1px #0d1324;
+}
+
+.alert{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,1450%);
+    background-color: transparent;
+    border: 0px solid;
+    color:antiquewhite;
+}
 
 

@@ -27,25 +27,26 @@
         </header>
 
         <main>
+            <div class="contenido">
+                <br><br>
 
-            <br><br>
-
-            <div class="categorias-principal">
-                <table>
-                {% for cat in categorias %}
-                <tr>
-                    <td>{{cat.id_categoria}}</td>                    
-                    <td>{{cat.nombre_categoria}}</td>
-                    <td><a class="opcion_menu_top" href="{% url 'form_mod_categoria' cat.id_categoria %}" >Modificar</a></td>
-                    <td><a class="opcion_menu_top" href="{% url 'form_del_categoria' cat.id_categoria %}" >Eliminar</a></td>
-                </tr>
-                {% endfor %}
-                 </table>
+                <div class="categorias-principal">
+                    <table>
+                    {% for cat in categorias %}
+                    <tr>
+                        <td>{{cat.id_categoria}}</td>                    
+                        <td>{{cat.nombre_categoria}}</td>
+                        <td><a class="opcion_menu_top" href="{% url 'form_mod_categoria' cat.id_categoria %}" >Modificar</a></td>
+                        <td><a class="opcion_menu_top" href="{% url 'form_del_categoria' cat.id_categoria %}" >Eliminar</a></td>
+                    </tr>
+                    {% endfor %}
+                    </table>
                  
+                </div>
+                <nav id="nav_bottom">
+                    <a class="opcion_menu_top" href="{% url 'form_crea_categoria' %}" >Nueva</a>
+                </nav>
             </div>
-            <nav id="nav_bottom">
-                <a class="opcion_menu_top" href="{% url 'form_crea_categoria' %}" >Nueva</a>
-            </nav>
         </main>
 
         <footer>
