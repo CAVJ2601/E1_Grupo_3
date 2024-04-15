@@ -22,7 +22,7 @@ class UsuarioForm(ModelForm):
 
         widgets = {
             'fecha_nac': DateInput(attrs={'class':'campo_formulario'}),
-            'password': TextInput(attrs={'type':'password'}),
+            'password': TextInput(attrs={type:'password'}),
         }
 
 class LoginForm(ModelForm):

@@ -268,7 +268,7 @@ td {
 
 .formulario {
     position: relative;
-    width: 350px;
+    width: 450px;
     height: 600px;
     background: transparent;
     border: 1px solid #81889c;
@@ -280,6 +280,14 @@ td {
     align-items: center;
 }
 
+#formulario_registro{
+    position: relative;
+    display:block;
+    justify-content: center;
+    align-content: center;
+
+ }
+ 
 #campo_formulario{
     padding: 10px;
     width: 100%;
@@ -301,7 +309,7 @@ td {
     left:50%;
     font-weight: 500;
     font-size: 1.5em;
-    transform: translate(-50%,1450%);
+    transform: translate(-50%,1100%);
     background-color: transparent;
     border: 0px solid;
     color: #C78C19;
