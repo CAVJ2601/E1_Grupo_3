@@ -12,16 +12,17 @@ class UsuarioForm(ModelForm):
     
     class Meta:
         model = Usuario
-        fields = ['usuario','nombre','correo','password','fecha_nac','direccion']
+        fields = ['usuario','nombre','correo','password','fecha_nac','direccion','id_region','id_comuna']
         usuario = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario'}))
         nombre = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario'}))
         correo = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario'}))
-        password = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario'}))
+        ##password = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario', 'type':'password'}))
         direccion = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario'}))
-        perfil = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario', 'type':'hidden'}))
+        ##id_perfil = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario', 'type':'hidden'}))
 
         widgets = {
             'fecha_nac': DateInput(attrs={'class':'campo_formulario'}),
+            'password': TextInput(attrs={'type':'password'}),
         }
 
 class LoginForm(ModelForm):
@@ -29,6 +30,9 @@ class LoginForm(ModelForm):
     class Meta:
         model = Usuario
         fields = ['usuario','password']
+        widgets = {
+            'password': TextInput(attrs={'type':'password'}),
+        }
 
 class CategoriasForm(ModelForm):
 
