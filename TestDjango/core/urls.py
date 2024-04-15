@@ -1,4 +1,4 @@
-from .views import home, form_crea_usuario, form_login, categoria, lista_categorias, form_mod_categoria, form_del_categoria, form_crea_categoria, lista_juegos, form_mod_juego, form_del_juego, form_crea_juego, cerrar_sesion
+from .views import home, form_crea_usuario, form_login, categoria, lista_categorias, form_mod_categoria, form_del_categoria, form_crea_categoria, lista_juegos, form_mod_juego, form_del_juego, form_crea_juego, cerrar_sesion, perfil_usuario
 from django.urls import path
 
 urlpatterns = [
@@ -15,4 +15,5 @@ urlpatterns = [
     path('form_crea_juego',form_crea_juego,name="form_crea_juego"),
     path('form_mod_juego/<id>',form_mod_juego,name="form_mod_juego"),
     path('form_del_juego/<id>',form_del_juego,name="form_del_juego"), 
+    path('perfil_usuario',perfil_usuario, name="perfil_usuario"),
     ]

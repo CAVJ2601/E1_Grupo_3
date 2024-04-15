@@ -208,3 +208,8 @@ def form_crea_juego(request):
             datos['mensaje'] = "Error " + formulario.errors.as_text()
         
     return render(request, 'core/form_crea_juego.html', datos)
+
+def perfil_usuario(request):
+    usuario_conectado = request.session.get('user', '')
+
+    return render(request, 'core/perfil_usuario.html', {'usuario_conectado': usuario_conectado})
