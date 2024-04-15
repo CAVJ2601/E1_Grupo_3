@@ -211,5 +211,5 @@ def form_crea_juego(request):
 
 def perfil_usuario(request):
     usuario_conectado = request.session.get('user', '')
-
+    
     return render(request, 'core/perfil_usuario.html', {'usuario_conectado': usuario_conectado})

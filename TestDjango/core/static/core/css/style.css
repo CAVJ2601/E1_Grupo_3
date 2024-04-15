@@ -268,7 +268,7 @@ td {
 
 .formulario {
     position: relative;
-    width: 350px;
+    width: 450px;
     height: 600px;
     background: transparent;
     border: 1px solid #81889c;
@@ -297,13 +297,17 @@ td {
 
 .alert{
     position:absolute;
+    font-size: 1.5em;
+    font-weight: 500;
     top:50%;
     left:50%;
-    transform: translate(-50%,1450%);
+    transform: translate(-50%,1200%);
     background-color: transparent;
     border: 0px solid;
     color: #C78C19;
     text-shadow: -1px 0 #0d1324, 0 1px #0d1324, 1px 0 #0d1324, 0 -1px #0d1324;
 }
+
+/*modificacion a las tablas*/
 
 
