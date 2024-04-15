@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'xe',
         'USER': 'TIENDA3',
         'PASSWORD': 'Tienda1234',
-        'HOST': 'localhost',
+        'HOST': '192.168.1.90',
         'PORT': '1521',
         'TEST': {
             'USER':'default_test',

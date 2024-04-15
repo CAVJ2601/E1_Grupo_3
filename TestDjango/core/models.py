@@ -8,6 +8,21 @@ class Perfil(models.Model):
 
     def __str__(self):
         return self.nombre_perfil
+    
+class Region(models.Model):
+    id_region = models.CharField(max_length=20, primary_key=True, verbose_name='Código región')
+    nombre_region = models.CharField(max_length=50, verbose_name='Nombre región')
+
+    def __str__(self):
+        return self.nombre_region
+    
+class Comuna(models.Model):
+    id_comuna = models.CharField(max_length=20, primary_key=True, verbose_name='Código comuna')
+    nombre_comuna = models.CharField(max_length=50, verbose_name='Nombre comuna')
+    id_region = models.ForeignKey(Region, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nombre_comuna
 
 class Usuario(models.Model):
     usuario = models.CharField(max_length=20, primary_key=True, verbose_name='Nombre usuario')
@@ -17,6 +32,8 @@ class Usuario(models.Model):
     fecha_nac = models.DateField(verbose_name='Fecha de nacimiento')
     direccion = models.CharField(max_length=100,verbose_name='Dirección despacho')
     id_perfil = models.ForeignKey(Perfil, default="1", on_delete=models.CASCADE)
+    id_region = models.ForeignKey(Region, null=True, on_delete=models.CASCADE)
+    id_comuna = models.ForeignKey(Comuna, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.usuario
