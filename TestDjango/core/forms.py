@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Usuario, CategoriaJuego, Juego, Perfil
+from .models import Usuario, CategoriaJuego, Juego
 
 class DateInput(forms.DateInput):
     input_type = 'date'
@@ -16,12 +16,13 @@ class UsuarioForm(ModelForm):
         usuario = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario'}))
         nombre = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario'}))
         correo = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario'}))
-        password = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario'}))
+        ##password = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario', 'type':'password'}))
         direccion = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario'}))
         ##id_perfil = forms.CharField(widget=forms.TextInput(attrs={'class':'campo_formulario', 'type':'hidden'}))
 
         widgets = {
             'fecha_nac': DateInput(attrs={'class':'campo_formulario'}),
+            'password': TextInput(attrs={'type':'password'}),
         }
 
 class LoginForm(ModelForm):
@@ -29,6 +30,9 @@ class LoginForm(ModelForm):
     class Meta:
         model = Usuario
         fields = ['usuario','password']
+        widgets = {
+            'password': TextInput(attrs={'type':'password'}),
+        }
 
 class CategoriasForm(ModelForm):
 
