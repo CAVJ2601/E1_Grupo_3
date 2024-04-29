@@ -2,6 +2,9 @@ from .forms import UsuarioForm, LoginForm, CategoriasForm, JuegoForm
 from .models import Usuario, CategoriaJuego, Juego, Perfil
 from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
+from html import unescape
+
+import requests
 
 # Create your views here.
 
@@ -213,3 +216,40 @@ def perfil_usuario(request):
     usuario_conectado = request.session.get('user', '')
 
     return render(request, 'core/perfil_usuario.html', {'usuario_conectado': usuario_conectado})
+
+    #url = "https://rickandmortyapi.com/api/character"
+
+def lista_juegos_por_encargo(request):
+
+    params = {
+        'api_key': 'ebd57961cb2382983090d52649c7f7e3dc5c01a5',
+        'format': 'json',
+          }
+    
+    headers = {
+    'User-Agent': 'j.gormaz@duocuc.cl'
+    }
+
+                             
+    url = "https://www.giantbomb.com/api/games/"
+
+    response = requests.get(url, params = params, headers=headers)
+    print(response.status_code)
+    #juegos = response.json().get("results",[])
+    if response.status_code == 200:
+        juegos = response.json().get("results",[])
+        print("juegos")
+        #print(juegos)
+        for juego in juegos:
+            if juego is not None and 'description' in juego and juego['description'] is not None:
+                juego['description'] = unescape(juego['description'])
+            else:
+                juego['description'] = ''
+
+    else: 
+        juegos = []
+
+    datos = {
+        'juegos':juegos
+    }
+    return render(request, "core/lista_juegos_por_encargo.html", datos)

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+   
+    <head>
+        {% load static%}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HORA RATA</title>
+        <link rel="stylesheet" href="{% static 'core/css/reset.css' %}">
+        <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    </head>
+
+    <body>
+        <div>
+            <a id="inicio" href="/">>Inicio</a>
+            <nav>
+                {% if role == '2' %}
+                  <p id='inicio_sesion'>Su perfil es Administrador</a>
+                {% endif %}
+            </nav> 
+        </div>
+        
+        <header>
+            <h2>
+                ADMINISTRADOR DE CATEGORÍAS
+            </h2>
+        </header>
+
+        <main>
+
+            <div class="contenido">
+                <br><br>
+                <div class="listado-producto">
+                <div class="categorias-principal">
+                    <table>
+                    {% for juego in juegos %}
+
+                    <tr>      
+                        <td><img height="100px" with="75px" src="{{juego.image.medium_url}}" alt="{{ juego.name }}"></td>           
+                        <td>{{juego.name}}</td>
+                        <td>{{juego.description|safe}}</td>
+                        <td>{{juego.date_last_updated}}</td>                       
+                    </tr>
+                    {% endfor %}
+                    </table>
+                </div> 
+                </div>
+                <nav id="nav_bottom">
+                    <a class="opcion_menu_top" href="{% url 'form_crea_juego' %}" >Nuevo</a>
+                </nav>
+            </div>
+        </main>
+
+        <footer>
+            <p class="texto-footer">Juegos Rata es una tienda exclusivamente online. Encuentranos en nuestras redes sociales:</p>
+            {% load static%}
+            <div class="footer-block">
+                <div class="image-on-top">
+                    <img src="{% static 'core/img/icono_insta.png' %}" alt="Instagram">
+                    <img src="{% static 'core/img/icono_tiktok.png' %}" alt="Tik Tok">
+                    <img src="{% static 'core/img/icono_x.png' %}" alt="Twitter">
+                </div>
+            </div>
+        </footer>
+    </body>
+
+</html>
