@@ -4,13 +4,17 @@ from core.models import Region, Comuna
 from rest_framework import status
 from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 from .serializers import RegionSerializer, ComunaSerializer
 from django.views.decorators.csrf import csrf_exempt
 
 @api_view(['GET', 'POST'])
 @csrf_exempt
+@permission_classes((IsAuthenticated,))
 def lista_regiones(request):
     if request.method == 'GET':
         region = Region.objects.all()
@@ -32,6 +36,7 @@ def lista_regiones(request):
 
 @api_view(['GET', 'PUT', 'PATCH', 'DELETE'])
 @csrf_exempt
+@permission_classes((IsAuthenticated,))
 def vista_regiones(request, id):
     try:
         region = Region.objects.filter(pk=id).first()
@@ -57,6 +62,7 @@ def vista_regiones(request, id):
 
 @api_view(['GET', 'POST'])
 @csrf_exempt
+@permission_classes((IsAuthenticated,))
 def lista_comunas(request):
     if request.method == 'GET':
         comuna = Comuna.objects.all()
@@ -78,6 +84,7 @@ def lista_comunas(request):
 
 @api_view(['GET', 'PUT', 'PATCH', 'DELETE'])
 @csrf_exempt
+@permission_classes((IsAuthenticated,))
 def vista_comunas(request, id):
     try:
         comuna = Comuna.objects.filter(pk=id).first()
