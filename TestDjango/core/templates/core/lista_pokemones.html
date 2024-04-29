@@ -22,7 +22,7 @@
         
         <header>
             <h2>
-                LISTA JUEGOS POR ENCARGO
+                LISTA OFICIAL POKEMONES
             </h2>
         </header>
 
@@ -33,13 +33,12 @@
                 <div class="listado-producto">
                 <div class="categorias-principal">
                     <table>
-                    {% for juego in juegos %}
+                    {% for pokemon in pokemons %}
 
                     <tr>      
-                        <td><img height="100px" with="75px" src="{{juego.image.medium_url}}" alt="{{ juego.name }}"></td>           
-                        <td>{{juego.name}}</td>
-                        <td>{{juego.description|safe}}</td>
-                        <td>{{juego.date_last_updated}}</td>                       
+                        <td><img height="100px" with="75px" src="{{pokemon.image}}" alt="{{pokemon.name}}"></td>           
+                        <td>{{pokemon.name}}</td>
+                   
                     </tr>
                     {% endfor %}
                     </table>

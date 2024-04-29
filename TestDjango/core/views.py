@@ -253,3 +253,21 @@ def lista_juegos_por_encargo(request):
         'juegos':juegos
     }
     return render(request, "core/lista_juegos_por_encargo.html", datos)
+
+
+def lista_pokemones(request):
+                         
+    response = requests.get('https://pokeapi.co/api/v2/pokemon?limit=100')
+    data = response.json()
+    pokemons = data['results']
+
+    for pokemon in pokemons:
+        url = pokemon['url']
+        response = requests.get(url)
+        data = response.json()
+        pokemon['image'] = data['sprites']['front_default']
+    
+    return render(request, "core/lista_pokemones.html", {"pokemons": pokemons})
+
+
+
