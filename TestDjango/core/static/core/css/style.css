@@ -254,7 +254,8 @@ footer {
 td {
     max-width: 500px;
     text-decoration: none;
-    text-align: center;
+    vertical-align: center;
+    text-align: center;    
     margin: 5 auto;
     padding: 3px 1px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
